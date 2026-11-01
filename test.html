@@ -1,0 +1,6 @@
+<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Telegram test</title><body style="font-family:sans-serif;padding:20px;line-height:1.6"><h2>Telegram test</h2><pre id="o" style="white-space:pre-wrap;font-size:16px"></pre><script src="config.js"></script><script>
+var o=document.getElementById("o");function L(t){o.textContent+=t+"\n"}
+if(typeof TG_TOKEN==="undefined"){L("❌ config.js is not loading or has a typing mistake. Open config.js and check that line 1 ends with \";")}
+else{L("Token: "+(TG_TOKEN?"found ("+TG_TOKEN.length+" characters)":"EMPTY - paste it in config.js"));L("Chat ID: "+(TG_CHAT||"EMPTY"));
+if(TG_TOKEN){fetch("https://api.telegram.org/bot"+TG_TOKEN+"/sendMessage?chat_id="+encodeURIComponent(TG_CHAT)+"&text="+encodeURIComponent("✅ Test message from DCA STORE")).then(function(r){return r.json()}).then(function(j){L(j.ok?"✅ Sent! Check your Telegram bot chat now.":"❌ Telegram says: "+j.description)}).catch(function(e){L("❌ Could not reach Telegram: "+e)})}}
+</script>
