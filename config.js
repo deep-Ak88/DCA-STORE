@@ -1,0 +1,3 @@
+var TG_TOKEN="";
+var TG_CHAT="1924321356";
+var CALLMEBOT_KEY="";
